@@ -16,7 +16,7 @@ st.set_page_config(
 @st.cache_resource
 def load_model():
     """Loads the pre-trained model."""
-    model_path = os.path.join('models/best_forecasting_model.joblib')
+    model_path = os.path.join('../models/best_forecasting_model.joblib')
     if not os.path.exists(model_path):
         st.error(f"Model file not found at {model_path}. Please train the model first.")
         return None
@@ -26,8 +26,8 @@ def load_model():
 @st.cache_data
 def load_data():
     """Loads the raw and processed data."""
-    raw_data_path = os.path.join('data/solar_panel_data.csv')
-    processed_data_path = os.path.join('data/solar_panel_data_processed.csv')
+    raw_data_path = os.path.join('../data/solar_panel_data.csv')
+    processed_data_path = os.path.join('../data/solar_panel_data_processed.csv')
 
     if not os.path.exists(raw_data_path) or not os.path.exists(processed_data_path):
         st.error("Data files not found. Please generate the data first.")
